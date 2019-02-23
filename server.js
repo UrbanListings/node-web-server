@@ -45,6 +45,14 @@ app.get('/about', (request, response) => {
     });
 });
 
+app.get('/projects', (request, response) => {
+    // response.send('About Page');
+     response.render('projects.hbs', {
+         pageTitle: 'Project Page',
+         currentYear: new Date().getFullYear()
+     });
+ });
+
 app.get('/bad', (request, response) => {
     response.send({
         errorMessage: 'Unable to process the Request'
